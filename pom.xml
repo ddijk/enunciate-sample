@@ -17,6 +17,7 @@
     <jaxb.version>2.2.11</jaxb.version>
     <jersey.version>2.5</jersey.version> <!--WARNING: version 2.6 and up require jdk 1.7-->
     <servlet-api.version>3.0.1</servlet-api.version>
+    <enunciate-openapi.version>1.0.9-SNAPSHOT</enunciate-openapi.version>
   </properties>
 
   <build>
@@ -41,6 +42,13 @@
             </goals>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>dk.jyskebank.tooling.enunciate</groupId>
+            <artifactId>enunciate-openapi</artifactId>
+            <version>${enunciate-openapi.version}</version>
+          </dependency>
+        </dependencies>
       </plugin>
       <plugin>
         <groupId>org.codehaus.cargo</groupId>
