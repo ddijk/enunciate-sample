@@ -25,49 +25,58 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Persona {
 
-  private String id;
-  private String email;
-  private String alias;
-  private Name name;
-  private javax.activation.DataHandler picture;
+    private String id;
+    private String email;
+    private String alias;
+    private Name name;
+    private javax.activation.DataHandler picture;
+    private Team team;
 
-  public String getId() {
-    return id;
-  }
+    public String getId() {
+        return id;
+    }
 
-  public void setId(String id) {
-    this.id = id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public String getEmail() {
-    return email;
-  }
+    public String getEmail() {
+        return email;
+    }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-  public String getAlias() {
-    return alias;
-  }
+    public String getAlias() {
+        return alias;
+    }
 
-  public void setAlias(String alias) {
-    this.alias = alias;
-  }
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
 
-  public Name getName() {
-    return name;
-  }
+    public Name getName() {
+        return name;
+    }
 
-  public void setName(Name name) {
-    this.name = name;
-  }
+    public void setName(Name name) {
+        this.name = name;
+    }
 
-  public DataHandler getPicture() {
-    return picture;
-  }
+    public DataHandler getPicture() {
+        return picture;
+    }
 
-  public void setPicture(DataHandler picture) {
-    this.picture = picture;
-  }
+    public void setPicture(DataHandler picture) {
+        this.picture = picture;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
 }

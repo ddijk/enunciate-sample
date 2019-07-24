@@ -1,27 +1,29 @@
-<enunciate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://enunciate.webcohesion.com/schemas/enunciate-2.0.0-M.4.xsd">
+<enunciate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="http://enunciate.webcohesion.com/schemas/enunciate-2.0.0-M.4.xsd">
 
-  <title>If You Wanna Be Cool API</title>
-  <description package="com.ifyouwannabecool.api"/>
-  <copyright>IfYouWannaBeCool.com</copyright>
+    <title>If You Wanna Be Cool API</title>
+    <description package="com.ifyouwannabecool.api"/>
+    <copyright>IfYouWannaBeCool.com</copyright>
 
-  <application root="http://www.ifyouwannabecool.com/api"/>
+    <application root="http://www.ifyouwannabecool.com/api"/>
 
-  <namespaces>
-    <namespace id="api" uri="http://api.ifyouwannabecool.com/"/>
-    <namespace id="link" uri="http://api.ifyouwannabecool.com/link"/>
-    <namespace id="persona" uri="http://api.ifyouwannabecool.com/persona"/>
-  </namespaces>
+    <namespaces>
+        <namespace id="api" uri="http://api.ifyouwannabecool.com/"/>
+        <namespace id="link" uri="http://api.ifyouwannabecool.com/link"/>
+        <namespace id="persona" uri="http://api.ifyouwannabecool.com/persona"/>
+    </namespaces>
 
-  <modules>
-    <docs docsDir="${project.build.directory}/doc">
-      <download file="LICENSE" name="Apache II" description="The license governing this API" showLink="true"/>
-    </docs>
-    <java-xml-client>
-      <package-conversions>
-        <convert from="com.ifyouwannabecool" to="com.ifyouwannabecool.client"/>
-      </package-conversions>
-    </java-xml-client>
-    <openapi disable="false" base="/api"/>
-  </modules>
+    <modules>
+        <docs docsDir="${project.build.directory}/doc">
+            <download file="LICENSE" name="Apache II" description="The license governing this API" showLink="true"/>
+        </docs>
+        <java-xml-client>
+            <package-conversions>
+                <convert from="com.ifyouwannabecool" to="com.ifyouwannabecool.client"/>
+            </package-conversions>
+        </java-xml-client>
+        <jackson disable="false" disableExamples="false"/>
+        <openapi disable="false" base="/api"/>
+    </modules>
 
 </enunciate>

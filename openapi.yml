@@ -213,6 +213,8 @@ components:
           $ref: "#/components/schemas/json_Name"
         picture:
           type: string
+        team:
+          $ref: "#/components/schemas/json_Team"
       example:
         id: "..."
         email: "..."
@@ -221,6 +223,7 @@ components:
           givenName: "..."
           surname: "..."
         picture: "..."
+        team: "JUMBO"
     "json_SocialGroup":
       title: "SocialGroup"
       type: object
@@ -246,6 +249,16 @@ components:
         - "..."
         groupLeaderId: "..."
         exclusive: true
+    "json_Team":
+      title: "Team"
+      type: string
+      enum:
+      - JUMBO
+      - MOVISTAR
+      - KAUTSHA
+      - INIIOS
+      - LOTTO
+      - TREK
     "xml_ns1_socialGroup":
       title: "socialGroup"
       allOf:
@@ -303,6 +316,20 @@ components:
           picture:
             type: string
             format: binary
+          team:
+            $ref: "#/components/schemas/xml_ns0_team"
         xml:
           name: persona
           namespace: http://api.example.com/persona
+    "xml_ns0_team":
+      title: "team"
+      type: string
+      enum:
+      - JUMBO
+      - MOVISTAR
+      - KAUTSHA
+      - INIIOS
+      - LOTTO
+      - TREK
+      xml:
+        namespace: http://api.example.com/persona
