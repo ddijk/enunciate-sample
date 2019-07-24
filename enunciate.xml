@@ -13,7 +13,7 @@
   </namespaces>
 
   <modules>
-    <docs>
+    <docs docsDir="${project.build.directory}/doc">
       <download file="LICENSE" name="Apache II" description="The license governing this API" showLink="true"/>
     </docs>
     <java-xml-client>
