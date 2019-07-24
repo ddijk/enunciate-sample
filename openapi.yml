@@ -246,7 +246,7 @@ components:
         - "..."
         groupLeaderId: "..."
         exclusive: true
-    "xml_ns0_socialGroup":
+    "xml_ns1_socialGroup":
       title: "socialGroup"
       allOf:
       - type: string
@@ -270,7 +270,7 @@ components:
         xml:
           name: socialGroup
           namespace: http://api.example.com/link
-    "xml_ns1_name":
+    "xml_ns0_name":
       title: "name"
       allOf:
       - type: string
@@ -285,7 +285,7 @@ components:
             type: string
         xml:
           namespace: http://api.example.com/persona
-    "xml_ns1_persona":
+    "xml_ns0_persona":
       title: "persona"
       allOf:
       - type: string
@@ -299,7 +299,7 @@ components:
           id:
             type: string
           name:
-            $ref: "#/components/schemas/xml_ns1_name"
+            $ref: "#/components/schemas/xml_ns0_name"
           picture:
             type: string
             format: binary
