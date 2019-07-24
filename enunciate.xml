@@ -23,7 +23,7 @@
 <!--            </package-conversions>-->
 <!--        </java-xml-client>-->
         <jackson disable="false" disableExamples="false"/>
-        <openapi disable="false" base="/api" freemarkerProcessingTemplate="${project.basedir}/mijn.fmt"/>
+        <openapi disable="false" base="/api" excludeExamples="true" />
     </modules>
 
 </enunciate>

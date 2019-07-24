@@ -196,9 +196,6 @@ components:
         surname:
           description: "The surname."
           type: string
-      example:
-        givenName: "..."
-        surname: "..."
     "json_Persona":
       title: "Persona"
       type: object
@@ -215,15 +212,6 @@ components:
           type: string
         team:
           $ref: "#/components/schemas/json_Team"
-      example:
-        id: "..."
-        email: "..."
-        alias: "..."
-        name:
-          givenName: "..."
-          surname: "..."
-        picture: "..."
-        team: "TREK"
     "json_SocialGroup":
       title: "SocialGroup"
       type: object
@@ -242,13 +230,6 @@ components:
         exclusive:
           description: "Whether the group is exclusive."
           type: boolean
-      example:
-        id: "..."
-        memberIds:
-        - "..."
-        - "..."
-        groupLeaderId: "..."
-        exclusive: true
     "json_Team":
       title: "Team"
       type: string
@@ -259,7 +240,7 @@ components:
       - INIIOS
       - LOTTO
       - TREK
-    "xml_ns0_socialGroup":
+    "xml_ns1_socialGroup":
       title: "socialGroup"
       allOf:
       - type: string
@@ -283,7 +264,7 @@ components:
         xml:
           name: socialGroup
           namespace: http://api.example.com/link
-    "xml_ns1_name":
+    "xml_ns0_name":
       title: "name"
       allOf:
       - type: string
@@ -298,7 +279,7 @@ components:
             type: string
         xml:
           namespace: http://api.example.com/persona
-    "xml_ns1_persona":
+    "xml_ns0_persona":
       title: "persona"
       allOf:
       - type: string
@@ -312,16 +293,16 @@ components:
           id:
             type: string
           name:
-            $ref: "#/components/schemas/xml_ns1_name"
+            $ref: "#/components/schemas/xml_ns0_name"
           picture:
             type: string
             format: binary
           team:
-            $ref: "#/components/schemas/xml_ns1_team"
+            $ref: "#/components/schemas/xml_ns0_team"
         xml:
           name: persona
           namespace: http://api.example.com/persona
-    "xml_ns1_team":
+    "xml_ns0_team":
       title: "team"
       type: string
       enum:
