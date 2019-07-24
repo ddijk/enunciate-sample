@@ -213,7 +213,7 @@ components:
           $ref: "#/components/schemas/json_Name"
         picture:
           type: string
-        dd:
+        team:
           $ref: "#/components/schemas/json_Team"
       example:
         id: "..."
@@ -223,7 +223,7 @@ components:
           givenName: "..."
           surname: "..."
         picture: "..."
-        dd: "MOVISTAR"
+        team: "TREK"
     "json_SocialGroup":
       title: "SocialGroup"
       type: object
