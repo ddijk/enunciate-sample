@@ -16,6 +16,10 @@
 
 package com.ifyouwannabecool.domain.persona;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.webcohesion.enunciate.metadata.DocumentationExample;
+
 import javax.activation.DataHandler;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -30,7 +34,8 @@ public class Persona {
     private String alias;
     private Name name;
     private javax.activation.DataHandler picture;
-    private Team team;
+
+    private Team team = Team.JUMBO;
 
     public String getId() {
         return id;

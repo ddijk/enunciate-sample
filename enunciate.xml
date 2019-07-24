@@ -14,7 +14,7 @@
     </namespaces>
 
     <modules>
-        <docs docsDir="${project.build.directory}/doc" freemarkerTemplate="mijn.fmt">
+        <docs docsDir="${project.build.directory}/doc">
             <download file="LICENSE" name="Apache II" description="The license governing this API" showLink="true"/>
         </docs>
 <!--        <java-xml-client>-->
@@ -23,7 +23,7 @@
 <!--            </package-conversions>-->
 <!--        </java-xml-client>-->
         <jackson disable="false" disableExamples="false"/>
-        <openapi disable="false" base="/api"/>
+        <openapi disable="false" base="/api" freemarkerProcessingTemplate="${project.basedir}/mijn.fmt"/>
     </modules>
 
 </enunciate>
