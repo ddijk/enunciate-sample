@@ -14,14 +14,14 @@
     </namespaces>
 
     <modules>
-        <docs docsDir="${project.build.directory}/doc">
+        <docs docsDir="${project.build.directory}/doc" freemarkerTemplate="mijn.fmt">
             <download file="LICENSE" name="Apache II" description="The license governing this API" showLink="true"/>
         </docs>
-        <java-xml-client>
-            <package-conversions>
-                <convert from="com.ifyouwannabecool" to="com.ifyouwannabecool.client"/>
-            </package-conversions>
-        </java-xml-client>
+<!--        <java-xml-client>-->
+<!--            <package-conversions>-->
+<!--                <convert from="com.ifyouwannabecool" to="com.ifyouwannabecool.client"/>-->
+<!--            </package-conversions>-->
+<!--        </java-xml-client>-->
         <jackson disable="false" disableExamples="false"/>
         <openapi disable="false" base="/api"/>
     </modules>
