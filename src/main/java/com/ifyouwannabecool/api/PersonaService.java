@@ -7,12 +7,7 @@
 package com.ifyouwannabecool.api;
 
 import javax.jws.WebService;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 
 import com.ifyouwannabecool.domain.persona.Persona;
 
@@ -31,12 +26,12 @@ public interface PersonaService
      */
     @Path("/{id}")
     @GET
-    Persona readPersona(@PathParam("id") String personaId);
+    Persona readPersona(@HeaderParam("Authorization") String token, @PathParam("id") String personaId);
 
     @Path("/{id}.json")
     @GET
     @Produces("application/json")
-    Persona readPersonaJson();
+    Persona readPersonaJson( @PathParam("id") String personaId);
 
     /**
      * Store a persona.

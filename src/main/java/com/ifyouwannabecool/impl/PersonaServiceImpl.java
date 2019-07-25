@@ -28,7 +28,15 @@ public class PersonaServiceImpl implements PersonaService
         return persona;
     }
 
-    public Persona readPersonaJson()
+    @Override
+    public Persona readPersona(String token, String personaId) {
+        System.out.println("token:"+ token);
+        final Persona persona = new Persona();
+        // ...load the persona from the db, etc...
+        return persona;
+    }
+
+    public Persona readPersonaJson(String personId)
     {
         final Persona persona = new Persona();
         // ...load the persona from the db, etc...

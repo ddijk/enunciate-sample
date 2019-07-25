@@ -4,7 +4,7 @@ info:
   version: "1.0-SNAPSHOT"
   description: "<p>Welcome to the API for our incredibly innovative social networking site,\n<u>IfYouWannaBeCool.com</u>!  We've got a full SOAP API, and even a few\nREST endpoints.  Feel free to check it out!</p>\n\n<h1>Disclaimer</h1>\n\n<p>You are free to use wannabecool as long as you agree to the\nterms of service which dictate that you give up your right to privacy.</p>"
 servers:
-- url: "/api"
+        - url: "http://localhost:8080/enunciate-sample"
 paths:
   "/persona":
     post:
@@ -58,7 +58,7 @@ paths:
       deprecated: false
       operationId: readPersona
       parameters:
-      - name: "Authorization"
+      - name: "aa"
         in: header
         description: ""
         required: false
@@ -200,6 +200,11 @@ paths:
                 type: boolean
  
 components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
   schemas:
     "json_Name":
       title: "Name"
@@ -329,3 +334,6 @@ components:
       - TREK
       xml:
         namespace: http://api.example.com/persona
+security:
+  - bearerAuth: [] 
+

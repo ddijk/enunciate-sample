@@ -23,7 +23,7 @@
 <!--            </package-conversions>-->
 <!--        </java-xml-client>-->
         <jackson disable="false" disableExamples="false"/>
-        <openapi disable="false" base="/api" excludeExamples="true" />
+        <openapi disable="false" base="/enunciate-sample" excludeExamples="true" />
     </modules>
 
 </enunciate>
