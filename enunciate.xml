@@ -23,7 +23,8 @@
 <!--            </package-conversions>-->
 <!--        </java-xml-client>-->
         <jackson disable="false" disableExamples="false"/>
-        <openapi disable="false" base="/enunciate-sample" excludeExamples="true" />
+<!--        <openapi disable="false" base="/enunciate-sample" excludeExamples="true" />-->
+        <jaxrs groupBy="class" disabled="false"/>
     </modules>
 
 </enunciate>

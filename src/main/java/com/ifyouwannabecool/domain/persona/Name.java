@@ -16,6 +16,8 @@
 
 package com.ifyouwannabecool.domain.persona;
 
+import java.util.List;
+
 /**
  * A name of a persona.
  *
@@ -25,6 +27,10 @@ public class Name {
 
   private String givenName;
   private String surname;
+
+  private List<double[]> metingen;
+  private List<double[]> measurements;
+  private List<String[]> scores;
 
   /**
    * The given name.
@@ -58,7 +64,33 @@ public class Name {
    *
    * @param surname The surname.
    */
-  public void setSurname(String surname) {
+  public void setSurname(String surname)
+  {
     this.surname = surname;
+  }
+
+
+  public List<double[]> getMetingen() {
+    return metingen;
+  }
+
+  public void setMetingen(List<double[]> metingen) {
+    this.metingen = metingen;
+  }
+
+  public List<double[]> getMeasurements() {
+    return measurements;
+  }
+
+  public void setMeasurements(List<double[]> measurements) {
+    this.measurements = measurements;
+  }
+
+  public List<String[]> getScores() {
+    return scores;
+  }
+
+  public void setScores(List<String[]> scores) {
+    this.scores = scores;
   }
 }

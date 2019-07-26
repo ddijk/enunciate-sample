@@ -10,6 +10,9 @@ import javax.jws.WebService;
 import javax.ws.rs.*;
 
 import com.ifyouwannabecool.domain.persona.Persona;
+import com.webcohesion.enunciate.metadata.rs.ResponseCode;
+import com.webcohesion.enunciate.metadata.rs.StatusCodes;
+import com.webcohesion.enunciate.metadata.rs.TypeHint;
 
 /**
  * The persona services is used to perform actions on the data associated with a persona.
@@ -26,6 +29,10 @@ public interface PersonaService
      */
     @Path("/{id}")
     @GET
+    @StatusCodes({
+            @ResponseCode( code = 404, condition = "The person is not found.",  type=@TypeHint(ErrorResponse.class))
+    })
+
     Persona readPersona(@HeaderParam("Authorization") String token, @PathParam("id") String personaId);
 
     @Path("/{id}.json")
