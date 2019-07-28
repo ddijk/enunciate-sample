@@ -43,11 +43,13 @@
           </execution>
         </executions>
         <dependencies>
+<!--
           <dependency>
             <groupId>dk.jyskebank.tooling.enunciate</groupId>
             <artifactId>enunciate-openapi</artifactId>
             <version>${enunciate-openapi.version}</version>
           </dependency>
+-->
         </dependencies>
       </plugin>
       <plugin>

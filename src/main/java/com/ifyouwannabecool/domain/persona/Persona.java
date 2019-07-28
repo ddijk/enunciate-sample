@@ -16,12 +16,12 @@
 
 package com.ifyouwannabecool.domain.persona;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.webcohesion.enunciate.metadata.DocumentationExample;
+import com.webcohesion.enunciate.metadata.rs.TypeHint;
 
 import javax.activation.DataHandler;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
 
 /**
  * @author Ryan Heaton
@@ -34,6 +34,9 @@ public class Persona {
     private String alias;
     private Name name;
     private javax.activation.DataHandler picture;
+    private java.util.List<Double[]> lijstWithDoubles;
+    private java.util.List<double[]> lijstWithPrimitiveDoubles;
+    private java.util.List rawList;
 
     private Team team = Team.JUMBO;
 
@@ -45,6 +48,7 @@ public class Persona {
         this.id = id;
     }
 
+    @DocumentationExample( value = "{ \"mailAddr\": \"s@nl.nl\"}")
     public String getEmail() {
         return email;
     }
@@ -61,6 +65,7 @@ public class Persona {
         this.alias = alias;
     }
 
+    @DocumentationExample( value = "{ \"mailAddr\": \"t@nl.nl\"}", type = @TypeHint(String.class))
     public Name getName() {
         return name;
     }
@@ -83,5 +88,30 @@ public class Persona {
 
     public void setTeam(Team team) {
         this.team = team;
+    }
+
+    @DocumentationExample( value = "112")
+    public List<double[]> getLijstWithPrimitiveDoubles() {
+        return lijstWithPrimitiveDoubles;
+    }
+
+    public void setLijstWithPrimitiveDoubles(List<double[]> lijstWithPrimitiveDoubles) {
+        this.lijstWithPrimitiveDoubles = lijstWithPrimitiveDoubles;
+    }
+
+    public List<Double[]> getLijstWithDoubles() {
+        return lijstWithDoubles;
+    }
+
+    public void setLijstWithDoubles(List<Double[]> lijstWithDoubles) {
+        this.lijstWithDoubles = lijstWithDoubles;
+    }
+
+    public List getRawList() {
+        return rawList;
+    }
+
+    public void setRawList(List rawList) {
+        this.rawList = rawList;
     }
 }

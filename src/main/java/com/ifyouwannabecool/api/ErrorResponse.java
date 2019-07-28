@@ -1,13 +1,23 @@
 package com.ifyouwannabecool.api;
 
 
+import com.webcohesion.enunciate.metadata.rs.TypeHint;
+
 import java.util.List;
 
 public class ErrorResponse {
 
-    List<String> messages;
+    String name;
 
-    public List<String> getMessages() {
+    List<double[]> messages;
+
+    //    @DocumentationExample(type = @TypeHint(double[][].class))
+    @TypeHint(double[][].class)
+    public List<double[]> getMessages() {
         return messages;
+    }
+
+    public String getName() {
+        return name;
     }
 }
