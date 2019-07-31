@@ -21,7 +21,7 @@
         <convert from="com.ifyouwannabecool" to="com.ifyouwannabecool.client"/>
       </package-conversions>
     </java-xml-client>
-    <openapi disable="false" base="/api"/>
+    <openapi disable="true" base="/api"/>
   </modules>
 
 </enunciate>
