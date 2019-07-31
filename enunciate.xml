@@ -13,7 +13,7 @@
   </namespaces>
 
   <modules>
-    <docs docsDir="${project.build.directory}/doc">
+    <docs docsDir="${project.build.directory}/doc"   freemarkerTemplate="${project.basedir}/docs.fmt">
       <download file="LICENSE" name="Apache II" description="The license governing this API" showLink="true"/>
     </docs>
     <java-xml-client>
