@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Ryan Heaton
  */
 @XmlRootElement
-public class Persona {
+public class Persona extends Foetus implements Nameable{
 
   private String id;
   private String email;
