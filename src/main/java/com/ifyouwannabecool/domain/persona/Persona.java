@@ -30,6 +30,7 @@ public class Persona {
   private String alias;
   private Name name;
   private javax.activation.DataHandler picture;
+  private Pet pet;
 
   public String getId() {
     return id;
@@ -69,5 +70,9 @@ public class Persona {
 
   public void setPicture(DataHandler picture) {
     this.picture = picture;
+  }
+
+  public Pet getPet() {
+    return pet;
   }
 }
