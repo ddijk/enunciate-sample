@@ -16,8 +16,11 @@
 
 package com.ifyouwannabecool.domain.persona;
 
+import com.webcohesion.enunciate.metadata.rs.TypeHint;
+
 import javax.activation.DataHandler;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
 
 /**
  * @author Ryan Heaton
@@ -32,8 +35,15 @@ public class Persona {
   private javax.activation.DataHandler picture;
   private Pet pet;
 
+  @TypeHint(int[][].class)
+  List<int[]> ages;
+
   public String getId() {
     return id;
+  }
+
+  public List<int[]> getAges() {
+    return ages;
   }
 
   public void setId(String id) {
