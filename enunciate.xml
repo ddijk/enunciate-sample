@@ -16,12 +16,12 @@
     <docs docsDir="${project.build.directory}/doc"   freemarkerTemplate="${project.basedir}/docs.fmt">
       <download file="LICENSE" name="Apache II" description="The license governing this API" showLink="true"/>
     </docs>
-    <java-xml-client>
-      <package-conversions>
-        <convert from="com.ifyouwannabecool" to="com.ifyouwannabecool.client"/>
-      </package-conversions>
-    </java-xml-client>
-    <openapi disable="true" base="/api"/>
+<!--    <java-xml-client>-->
+<!--      <package-conversions>-->
+<!--        <convert from="com.ifyouwannabecool" to="com.ifyouwannabecool.client"/>-->
+<!--      </package-conversions>-->
+<!--    </java-xml-client>-->
+    <openapi disable="false" base="/api"/>
   </modules>
 
 </enunciate>
