@@ -16,7 +16,12 @@
 
 package com.ifyouwannabecool.domain.persona;
 
+import com.ifyouwannabecool.api.Api2;
+
 import javax.activation.DataHandler;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -26,8 +31,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Persona extends Foetus implements Nameable{
 
   private String id;
+
+//  @XmlAttribute(required = true) @Size(min = 5, max = 10) private String bijnaam;
   private String email;
+
   private String alias;
+
+  @XmlAttribute(required = true)
   private Name name;
   private javax.activation.DataHandler picture;
 
@@ -39,6 +49,7 @@ public class Persona extends Foetus implements Nameable{
     this.id = id;
   }
 
+  @NotNull(groups = Api2.class)
   public String getEmail() {
     return email;
   }
@@ -55,13 +66,13 @@ public class Persona extends Foetus implements Nameable{
     this.alias = alias;
   }
 
-  public Name getName() {
-    return name;
-  }
-
-  public void setName(Name name) {
-    this.name = name;
-  }
+//  public Name getName() {
+//    return name;
+//  }
+//
+//  public void setName(Name name) {
+//    this.name = name;
+//  }
 
   public DataHandler getPicture() {
     return picture;
@@ -70,4 +81,12 @@ public class Persona extends Foetus implements Nameable{
   public void setPicture(DataHandler picture) {
     this.picture = picture;
   }
+
+//  public String getBijnaam() {
+//    return bijnaam;
+//  }
+//
+//  public void setBijnaam(String bijnaam) {
+//    this.bijnaam = bijnaam;
+//  }
 }

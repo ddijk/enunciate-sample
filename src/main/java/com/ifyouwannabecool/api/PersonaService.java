@@ -36,7 +36,7 @@ public interface PersonaService
     @Path("/{id}.json")
     @GET
     @Produces("application/json")
-    Persona readPersonaJson();
+    Persona readPersonaJson(@PathParam("id") String personaId);
 
     /**
      * Store a persona.

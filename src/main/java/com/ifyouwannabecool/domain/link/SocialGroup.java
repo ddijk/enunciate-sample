@@ -16,6 +16,7 @@
 
 package com.ifyouwannabecool.domain.link;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -29,6 +30,8 @@ public class SocialGroup {
   private String id;
   private String[] memberIds;
   private String groupLeaderId;
+
+  @XmlAttribute(required = false)
   private boolean exclusive;
 
   /**
@@ -90,16 +93,16 @@ public class SocialGroup {
    *
    * @return Whether the group is exclusive.
    */
-  public boolean isExclusive() {
-    return exclusive;
-  }
+//  public boolean isExclusive() {
+//    return exclusive;
+//  }
 
   /**
    * Whether the group is exclusive.
    *
    * @param exclusive Whether the group is exclusive.
    */
-  public void setExclusive(boolean exclusive) {
-    this.exclusive = exclusive;
-  }
+//  public void setExclusive(boolean exclusive) {
+//    this.exclusive = exclusive;
+//  }
 }

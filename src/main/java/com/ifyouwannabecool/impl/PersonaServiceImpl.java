@@ -28,7 +28,7 @@ public class PersonaServiceImpl implements PersonaService
         return persona;
     }
 
-    public Persona readPersonaJson()
+    public Persona readPersonaJson(final String personaId)
     {
         final Persona persona = new Persona();
         // ...load the persona from the db, etc...
