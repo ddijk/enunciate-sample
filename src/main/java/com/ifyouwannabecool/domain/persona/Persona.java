@@ -16,11 +16,11 @@
 
 package com.ifyouwannabecool.domain.persona;
 
-import com.ifyouwannabecool.api.Api2;
+import com.ifyouwannabecool.beanval.DataAPI;
+import com.ifyouwannabecool.beanval.SimulationAPI;
 
 import javax.activation.DataHandler;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -28,45 +28,66 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Ryan Heaton
  */
 @XmlRootElement
-public class Persona extends Foetus implements Nameable{
+public class Persona extends Foetus implements Nameable {
 
   private String id;
 
-//  @XmlAttribute(required = true) @Size(min = 5, max = 10) private String bijnaam;
+  //  @XmlAttribute(required = true) @Size(min = 5, max = 10) private String bijnaam;
   private String email;
 
   private String alias;
+
+  private String city;
+  private String language;
 
   @XmlAttribute(required = true)
   private Name name;
   private javax.activation.DataHandler picture;
 
+  /**
+   * Field without explicit validation group (i.e. default group)
+   */
+  @NotNull
   public String getId() {
     return id;
+  }
+
+  /**
+   * Field with one validation group: DataAPI
+   */
+  @NotNull(groups = DataAPI.class)
+  public String getEmail() {
+    return email;
+  }
+
+  /**
+   * Field with two validation groups: DataAPI and SimulationAPI
+   */
+  @NotNull(groups = {DataAPI.class, SimulationAPI.class})
+  public String getAlias() {
+    return alias;
+  }
+
+  /**
+   * Field with one validation group: SimulationAPI
+   */
+  @NotNull(groups = SimulationAPI.class)
+  public String getCity() {
+    return city;
+  }
+
+  /**
+   * Field without bean validation constraint
+   */
+  public String getLanguage() {
+    return language;
   }
 
   public void setId(String id) {
     this.id = id;
   }
 
-  @NotNull(groups = Api2.class)
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  public String getAlias() {
-    return alias;
-  }
-
-  public void setAlias(String alias) {
-    this.alias = alias;
-  }
-
-//  public Name getName() {
+  //  public Name getName() {
 //    return name;
 //  }
 //

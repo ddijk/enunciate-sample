@@ -1,6 +1,6 @@
 package com.ifyouwannabecool.domain.persona;
 
-import com.ifyouwannabecool.domain.beanval.DataAPI;
+import com.ifyouwannabecool.beanval.DataAPI;
 import com.webcohesion.enunciate.metadata.rs.TypeHint;
 
 import javax.validation.constraints.*;

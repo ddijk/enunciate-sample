@@ -22,8 +22,8 @@
 <!--      </package-conversions>-->
 <!--    </java-xml-client>-->
     <jaxb disabled="false"/>
-    <jackson disabled="false"/>
-    <openapi disable="false" base="/api" api="api_2"/>
+    <jackson disabled="false" beanValidationGroups="SimulationAPI"/>
+    <openapi disable="false" base="/api" />
   </modules>
 
 </enunciate>
