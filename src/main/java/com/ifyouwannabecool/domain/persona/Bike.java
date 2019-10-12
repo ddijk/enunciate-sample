@@ -30,6 +30,7 @@ public class Bike {
 
     @Past
     @TypeHint(Date.class)
+    @NotNull(message = "{aap}")
     public Date getProductionDate() {
         return productionDate;
     }
