@@ -35,13 +35,13 @@ public class Persona {
   private javax.activation.DataHandler picture;
   private Pet pet;
 
-  @TypeHint(int[][].class)
   List<int[]> ages;
 
   public String getId() {
     return id;
   }
 
+  @TypeHint(int[][].class)
   public List<int[]> getAges() {
     return ages;
   }

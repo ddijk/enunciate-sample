@@ -12,7 +12,8 @@
 
   <properties>
     <enunciate.version>2.12.0</enunciate.version>
-    <jaxws-ri-rt.version>2.2.10</jaxws-ri-rt.version>
+    <enunciate.version>2.13.0-SNAPSHOT</enunciate.version>
+<!--    <jaxws-ri-rt.version>2.2.10</jaxws-ri-rt.version>-->
     <jackson.version>2.9.9</jackson.version>
     <jaxb.version>2.2.11</jaxb.version>
     <jersey.version>2.5</jersey.version> <!--WARNING: version 2.6 and up require jdk 1.7-->
@@ -34,7 +35,7 @@
       <plugin>
         <groupId>com.webcohesion.enunciate</groupId>
         <artifactId>enunciate-maven-plugin</artifactId>
-        <version>2.11.1</version>
+        <version>${enunciate.version}</version>
         <executions>
           <execution>
             <goals>
