@@ -23,7 +23,7 @@
 <!--    </java-xml-client>-->
     <jaxb disabled="false"/>
     <jackson disabled="false" beanValidationGroups="com.ifyouwannabecool.beanval.SimulationAPI"/>
-    <openapi disable="false" base="/api" />
+    <openapi disable="false" base="/api" docsDir="api-2" />
   </modules>
 
 </enunciate>

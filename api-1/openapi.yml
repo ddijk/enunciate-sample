@@ -1,0 +1,416 @@
+openapi: 3.0.0
+info:
+  title: "API 1"
+  version: "1.0-SNAPSHOT"
+  description: "<p>Welcome to the API for our incredibly innovative social networking site,\n<u>IfYouWannaBeCool.com</u>!  We've got a full SOAP API, and even a few\nREST endpoints.  Feel free to check it out!</p>\n\n<h1>Disclaimer</h1>\n\n<p>You are free to use wannabecool as long as you agree to the\nterms of service which dictate that you give up your right to privacy.</p>"
+servers:
+- url: "/api"
+paths:
+  "/api2":
+    get:
+      description: ""
+      tags:
+        - "Api2"
+      summary: ""
+      deprecated: false
+      operationId: get
+      responses:
+        "200":
+          description: ""
+          content:
+            "*/*":
+              schema:
+                $ref: "#/components/schemas/json_Persona"
+ 
+  "/persona":
+    post:
+      description: "Store a persona."
+      tags:
+        - "PersonaServiceImpl"
+      summary: "Store a persona."
+      deprecated: false
+      operationId: storePersona
+      requestBody:
+        description: "The persona to store."
+        required: true
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/json_Persona"
+      responses:
+        "201":
+          description: "Success"
+ 
+  "/persona/{id}":
+    delete:
+      description: "Delete a persona."
+      tags:
+        - "PersonaServiceImpl"
+      summary: "Delete a persona."
+      deprecated: false
+      operationId: deletePersona
+      parameters:
+      - name: "id"
+        in: path
+        description: "The id of the persona to delete."
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: "Whether the persona was successfully deleted."
+          content:
+            "*/*":
+              schema:
+                description: "Whether the persona was successfully deleted."
+                type: boolean
+ 
+    get:
+      description: "Reads a persona."
+      tags:
+        - "PersonaServiceImpl"
+      summary: "Reads a persona."
+      deprecated: false
+      operationId: readPersona
+      parameters:
+      - name: "id"
+        in: path
+        description: "The id of the persona to read."
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: "The persona."
+          content:
+            "*/*":
+              schema:
+                $ref: "#/components/schemas/json_Persona"
+ 
+  "/persona/{id}.json":
+    get:
+      description: ""
+      tags:
+        - "PersonaServiceImpl"
+      summary: ""
+      deprecated: false
+      operationId: readPersonaJson
+      parameters:
+      - name: "id"
+        in: path
+        description: ""
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: ""
+          content:
+            "*/*":
+              schema:
+                $ref: "#/components/schemas/json_Persona"
+ 
+  "/group":
+    post:
+      description: "Create a social group."
+      tags:
+        - "SocialGroupServiceImpl"
+      summary: "Create a social group."
+      deprecated: false
+      operationId: createSocialGroup
+      parameters:
+      - name: "exclusive"
+        in: query
+        description: "Whether the group is exclusive."
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - name: "leader"
+        in: query
+        description: "The id of the group leader."
+        required: false
+        schema:
+          type: string
+        style: form
+      - name: "member"
+        in: query
+        description: "The ids of the members of the group."
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+        style: form
+      responses:
+        "201":
+          description: "The group that was created."
+          content:
+            "*/*":
+              schema:
+                $ref: "#/components/schemas/json_SocialGroup"
+ 
+  "/group/{groupId}":
+    get:
+      description: "Read the specified social group."
+      tags:
+        - "SocialGroupServiceImpl"
+      summary: "Read the specified social group."
+      deprecated: false
+      operationId: readGroup
+      parameters:
+      - name: "groupId"
+        in: path
+        description: "The id of the group."
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: "The social group."
+          content:
+            "*/*":
+              schema:
+                $ref: "#/components/schemas/json_SocialGroup"
+ 
+    post:
+      description: "Adds a persona to a social group."
+      tags:
+        - "SocialGroupServiceImpl"
+      summary: "Adds a persona to a social group."
+      deprecated: false
+      operationId: addToSocialGroup
+      parameters:
+      - name: "groupId"
+        in: path
+        description: "The id of the group to add the persona to."
+        required: true
+        schema:
+          type: string
+        style: simple
+      - name: "member"
+        in: query
+        description: "The id of the persona to add to the group."
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "201":
+          description: "Whether the persona was successfully added."
+          content:
+            "*/*":
+              schema:
+                description: "Whether the persona was successfully added."
+                type: boolean
+ 
+components:
+  schemas:
+    "json_Bike":
+      title: "Bike"
+      type: object
+      required:
+      - "make"
+      properties:
+        "make":
+          maxLength: 5
+          minLength: 3
+          type: string
+        "price":
+          type: number
+        "productionDate":
+          type: integer
+          format: int32
+        "recycleDate":
+          type: integer
+          format: int32
+      example:
+        make: "..."
+        price: 12345.0
+        productionDate: 12345
+        recycleDate: 12345
+    "json_Foetus":
+      oneOf: 
+      - $ref: "#/components/schemas/json_Renner"
+      - $ref: "#/components/schemas/json_Persona"
+    "json_Name":
+      title: "Name"
+      type: object
+      properties:
+        "givenName":
+          description: "The given name."
+          type: string
+        "surname":
+          description: "The surname."
+          type: string
+      example:
+        givenName: "..."
+        surname: "..."
+    "json_Persona":
+      title: "Persona"
+      allOf:
+      - $ref: "#/components/schemas/json_Foetus"
+      - type: object
+        required:
+        - "email"
+        - "alias"
+        properties:
+          "name":
+            $ref: "#/components/schemas/json_Name"
+          "id":
+            description: "Field without explicit validation group (i.e. default group)"
+            type: string
+          "email":
+            description: "Field with one validation group: DataAPI"
+            type: string
+          "alias":
+            description: "Field with two validation groups: DataAPI and SimulationAPI"
+            type: string
+          "city":
+            description: "Field with one validation group: SimulationAPI"
+            type: string
+          "language":
+            description: "Field without bean validation constraint"
+            type: string
+          "picture":
+            type: string
+        example:
+          name:
+            givenName: "..."
+            surname: "..."
+          id: "..."
+          email: "..."
+          alias: "..."
+          city: "..."
+          language: "..."
+          picture: "..."
+    "json_Renner":
+      title: "Renner"
+      allOf:
+      - $ref: "#/components/schemas/json_Persona"
+      - type: object
+        properties:
+          "team":
+            description: "The Team blah..."
+            type: string
+          "bike":
+            $ref: "#/components/schemas/json_Bike"
+        example:
+          team: "..."
+          bike:
+            make: "..."
+            price: 12345.0
+            productionDate: 12345
+            recycleDate: 12345
+          name:
+            givenName: "..."
+            surname: "..."
+          id: "..."
+          email: "..."
+          alias: "..."
+          city: "..."
+          language: "..."
+          picture: "..."
+    "json_SocialGroup":
+      title: "SocialGroup"
+      type: object
+      properties:
+        "exclusive":
+          type: boolean
+        "id":
+          description: "The id of the social group."
+          type: string
+        "memberIds":
+          description: "The ids of the members in the social group."
+          type: array
+          items:
+            type: string
+        "groupLeaderId":
+          description: "The id of the group leader."
+          type: string
+      example:
+        exclusive: true
+        id: "..."
+        memberIds:
+        - "..."
+        - "..."
+        groupLeaderId: "..."
+    "xml_ns1_socialGroup":
+      title: "socialGroup"
+      allOf:
+      - type: string
+        format: binary
+      - type: object
+        required:
+        - "exclusive"
+        properties:
+          "exclusive":
+            xml:
+              attribute: true
+            type: boolean
+          "groupLeaderId":
+            description: "The id of the group leader."
+            type: string
+          "id":
+            description: "The id of the social group."
+            type: string
+          "memberIds":
+            description: "The ids of the members in the social group."
+            type: array
+            items:
+              type: string
+        xml:
+          name: socialGroup
+          namespace: http://api.example.com/link
+    "xml_ns0_foetus":
+      oneOf: 
+      - $ref: "#/components/schemas/xml_ns0_persona"
+      - $ref: "#/components/schemas/xml_ns0_renner"
+    "xml_ns0_name":
+      title: "name"
+      allOf:
+      - type: string
+        format: binary
+      - type: object
+        properties:
+          "givenName":
+            description: "The given name."
+            type: string
+          "surname":
+            description: "The surname."
+            type: string
+        xml:
+          namespace: http://api.example.com/persona
+    "xml_ns0_persona":
+      title: "persona"
+      allOf:
+      - $ref: "#/components/schemas/xml_ns0_foetus"
+      - type: object
+        required:
+        - "name"
+        - "id"
+        properties:
+          "name":
+            xml:
+              attribute: true
+            $ref: "#/components/schemas/xml_ns0_name"
+          "id":
+            description: "Field without explicit validation group (i.e. default group)"
+            type: string
+          "picture":
+            type: string
+            format: binary
+        xml:
+          name: persona
+          namespace: http://api.example.com/persona
+    "xml_ns0_renner":
+      title: "renner"
+      allOf:
+      - $ref: "#/components/schemas/xml_ns0_persona"
+      - type: object
+        xml:
+          namespace: http://api.example.com/persona
