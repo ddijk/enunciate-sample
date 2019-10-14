@@ -316,6 +316,8 @@ components:
     "json_SocialGroup":
       title: "SocialGroup"
       type: object
+      required:
+      - "exclusive"
       properties:
         "exclusive":
           type: boolean
@@ -390,7 +392,6 @@ components:
       - type: object
         required:
         - "name"
-        - "id"
         properties:
           "name":
             xml:
