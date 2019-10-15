@@ -339,7 +339,7 @@ components:
         - "..."
         - "..."
         groupLeaderId: "..."
-    "xml_ns1_socialGroup":
+    "xml_ns0_socialGroup":
       title: "socialGroup"
       allOf:
       - type: string
@@ -366,11 +366,11 @@ components:
         xml:
           name: socialGroup
           namespace: http://api.example.com/link
-    "xml_ns0_foetus":
+    "xml_ns1_foetus":
       oneOf: 
-      - $ref: "#/components/schemas/xml_ns0_persona"
-      - $ref: "#/components/schemas/xml_ns0_renner"
-    "xml_ns0_name":
+      - $ref: "#/components/schemas/xml_ns1_persona"
+      - $ref: "#/components/schemas/xml_ns1_renner"
+    "xml_ns1_name":
       title: "name"
       allOf:
       - type: string
@@ -385,10 +385,10 @@ components:
             type: string
         xml:
           namespace: http://api.example.com/persona
-    "xml_ns0_persona":
+    "xml_ns1_persona":
       title: "persona"
       allOf:
-      - $ref: "#/components/schemas/xml_ns0_foetus"
+      - $ref: "#/components/schemas/xml_ns1_foetus"
       - type: object
         required:
         - "name"
@@ -397,7 +397,7 @@ components:
           "name":
             xml:
               attribute: true
-            $ref: "#/components/schemas/xml_ns0_name"
+            $ref: "#/components/schemas/xml_ns1_name"
           "id":
             description: "Field without explicit validation group (i.e. default group)"
             type: string
@@ -407,10 +407,10 @@ components:
         xml:
           name: persona
           namespace: http://api.example.com/persona
-    "xml_ns0_renner":
+    "xml_ns1_renner":
       title: "renner"
       allOf:
-      - $ref: "#/components/schemas/xml_ns0_persona"
+      - $ref: "#/components/schemas/xml_ns1_persona"
       - type: object
         xml:
           namespace: http://api.example.com/persona

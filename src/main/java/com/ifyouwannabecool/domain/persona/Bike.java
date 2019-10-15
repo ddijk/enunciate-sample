@@ -28,14 +28,14 @@ public class Bike {
         return price;
     }
 
-    @Past
+    @Past(groups = DataAPI.class)
     @TypeHint(Date.class)
     @NotNull(message = "{aap}")
     public Date getProductionDate() {
         return productionDate;
     }
 
-    @Future
+    @Future(groups = DataAPI.class)
     public Date getRecycleDate() {
         return recycleDate;
     }
