@@ -215,8 +215,6 @@ components:
       type: object
       properties:
         "make":
-          maxLength: 5
-          minLength: 3
           type: string
         "price":
           type: number
@@ -392,6 +390,7 @@ components:
       - type: object
         required:
         - "name"
+        - "id"
         properties:
           "name":
             xml:
