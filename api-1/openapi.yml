@@ -213,8 +213,6 @@ components:
     "json_Bike":
       title: "Bike"
       type: object
-      required:
-      - "make"
       properties:
         "make":
           type: string
@@ -253,10 +251,6 @@ components:
       allOf:
       - $ref: "#/components/schemas/json_Foetus"
       - type: object
-        required:
-        - "bike"
-        - "email"
-        - "alias"
         properties:
           "bike":
             $ref: "#/components/schemas/json_Bike"

@@ -18,6 +18,7 @@ package com.ifyouwannabecool.domain.persona;
 
 import com.ifyouwannabecool.beanval.DataAPI;
 import com.ifyouwannabecool.beanval.SimulationAPI;
+import com.ifyouwannabecool.beanval.SubDataAPI;
 
 import javax.activation.DataHandler;
 import javax.validation.constraints.NotNull;
@@ -42,7 +43,7 @@ public class Persona extends Foetus implements Nameable {
 
   private Bike bike;
 
-  @NotNull(groups = DataAPI.class)
+  @NotNull(groups = SubDataAPI.class)
   public Bike getBike() {
     return bike;
   }

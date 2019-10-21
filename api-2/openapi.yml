@@ -251,9 +251,6 @@ components:
       allOf:
       - $ref: "#/components/schemas/json_Foetus"
       - type: object
-        required:
-        - "alias"
-        - "city"
         properties:
           "bike":
             $ref: "#/components/schemas/json_Bike"
