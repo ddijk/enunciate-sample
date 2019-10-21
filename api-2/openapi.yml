@@ -255,6 +255,8 @@ components:
         - "alias"
         - "city"
         properties:
+          "bike":
+            $ref: "#/components/schemas/json_Bike"
           "name":
             $ref: "#/components/schemas/json_Name"
           "id":
@@ -275,6 +277,11 @@ components:
           "picture":
             type: string
         example:
+          bike:
+            make: "..."
+            price: 12345.0
+            productionDate: 12345
+            recycleDate: 12345
           name:
             givenName: "..."
             surname: "..."
@@ -284,6 +291,7 @@ components:
           city: "..."
           language: "..."
           picture: "..."
+          wweight: "..."
     "json_Renner":
       title: "Renner"
       allOf:
@@ -311,6 +319,7 @@ components:
           city: "..."
           language: "..."
           picture: "..."
+          wweight: "..."
     "json_SocialGroup":
       title: "SocialGroup"
       type: object

@@ -40,6 +40,13 @@ public class Persona extends Foetus implements Nameable {
   private String city;
   private String language;
 
+  private Bike bike;
+
+  @NotNull(groups = DataAPI.class)
+  public Bike getBike() {
+    return bike;
+  }
+
   @XmlAttribute(required = true)
   private Name name;
   private javax.activation.DataHandler picture;

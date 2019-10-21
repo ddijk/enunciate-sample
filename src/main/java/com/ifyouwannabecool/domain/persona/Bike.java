@@ -1,10 +1,12 @@
 package com.ifyouwannabecool.domain.persona;
 
 import com.ifyouwannabecool.beanval.DataAPI;
+import com.ifyouwannabecool.constraints.NotEmptyFields;
 import com.webcohesion.enunciate.metadata.rs.TypeHint;
 
 import javax.validation.constraints.*;
 import java.util.Date;
+import java.util.List;
 
 public class Bike {
 
@@ -15,6 +17,9 @@ public class Bike {
     Date productionDate;
 
     Date recycleDate;
+
+    @NotEmptyFields(groups = DataAPI.class)
+    List<Wheel> wheels;
 
     @NotNull(groups = DataAPI.class)
     @Size(min = 3, max = 5)
